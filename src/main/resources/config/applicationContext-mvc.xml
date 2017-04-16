@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+    <!-- 最重要:::如果放在spring-context.xml中，这里的aop设置将不会生效 -->
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
+    <context:component-scan base-package="com.itcast.oa.controller" />
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <ref bean="messageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <mvc:default-servlet-handler/>
+
+
+    <!-- 转json所支持的头信息类型  -->
+    <bean id="messageConverter"
+          class="com.itcast.oa.base.converters.CustomMappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+                <value>text/html;charset=UTF-8</value><!-- 解决火狐发送的ajax请求不是json格式   -->
+            </list>
+        </property>
+    </bean>
+
+    <!--视图解释器 -->
+    <bean id="freeMarkerViewResolver"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="cache" value="true" />
+        <property name="prefix" value="screen/"/>
+        <property name="suffix" value=".html" />
+        <property name="contentType" value="text/html;charset=UTF-8" />
+        <!-- 设置requestContext变量的名称 -->
+        <property name="requestContextAttribute" value="request" />
+        <!-- 配置是否在生成模板内容之前把HTTPsession中的数据放入model中 -->
+        <property name="exposeSessionAttributes" value="true" />
+        <!-- 配置是否在生成模板内容之前把HTTPrequest中的数据放入model中 -->
+        <property name="exposeRequestAttributes" value="true" />
+        <!-- 使用spring lib时 是否暴露 RequestContext 变量 默认为true -->
+        <property name="exposeSpringMacroHelpers" value="true" />
+        <property name="order" value="0"/>
+    </bean>
+
+    <!-- Freemarker配置 -->
+    <bean id="freemarkerConfig"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/view/" />
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">0</prop>
+                <prop key="default_encoding">utf-8</prop>
+                <prop key="number_format">0.##########</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="classic_compatible">true</prop>
+                <prop key="template_exception_handler">ignore</prop>
+                <!-- 自动引入模板 -->
+                <!-- <prop key="auto_import">components/spring.ftl as p</prop> -->
+            </props>
+        </property>
+    </bean>
+
+    <!-- springmvc提供的简单异常处理器 -->
+    <bean class="com.itcast.oa.base.core.CustomExceptionResolver">
+        <!-- 定义默认的异常处理页面 -->
+        <property name="defaultErrorView" value="error/error"/>
+        <!-- 定义异常处理页面用来获取异常信息的变量名，也可不定义，默认名为exception -->
+        <property name="exceptionAttribute" value="ex"/>
+
+        <property name="warnLogCategory" value="INFO" />
+        <property name="defaultStatusCode" value="500" />
+
+        <property name="statusCodes">
+            <props>
+                <prop key="error/404">404</prop>
+                <prop key="error/500">500</prop>
+            </props>
+        </property>
+    </bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/oss/**"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <bean class="com.itcast.oa.base.core.ContextInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>
