@@ -70,7 +70,7 @@ ul.MenuLevel2 {
 	padding-left: 61px;
 	padding-top: 4px;
 	margin: 0;
-	background: url(/images/blue/images/menu_bg_head.gif) no-repeat;
+	background: url(../img/images/blue/images/menu_bg_head.gif) no-repeat;
 	cursor: hand;
 }
 
@@ -81,7 +81,7 @@ ul.MenuLevel2 {
 	height: 21px;
 	padding-left: 61px;
 	padding-top: 4px;
-	background: url(/images/blue/images/menu_bg_3.gif) no-repeat;
+	background: url(../img/images/blue/images/menu_bg_3.gif) no-repeat;
 	cursor: hand;
 }
 
@@ -92,14 +92,14 @@ ul.MenuLevel2 {
 	height: 21px;
 	padding-left: 61px;
 	padding-top: 4px;
-	background: url(/images/blue/images/menu_bg_2.gif) no-repeat;
+	background: url(../img/images/blue/images/menu_bg_2.gif) no-repeat;
 	cursor: hand;
 }
 
 .level1Style {
 	width: 155px;
 	height: 24px;
-	background: url(/images/blue/images/menu_btn_bg.gif) no-repeat;
+	background: url(../img/images/blue/images/menu_btn_bg.gif) no-repeat;
 	padding-left: 20px;
 	padding-top: 4px;
 	cursor: hand;
@@ -108,14 +108,14 @@ ul.MenuLevel2 {
 .level1SelectedStyle {
 	width: 155px;
 	height: 24px;
-	background: url(/images/blue/images/menu_btn_bg_selected.gif) no-repeat;
+	background: url(../img/images/blue/images/menu_btn_bg_selected.gif) no-repeat;
 	padding-left: 20px;
 	padding-top: 4px;
 	cursor: hand;
 }
 
 .level2Style {
-	width: 100%;
+	width: 100px;
 	height: 20px;
 	background: #8ec4e9;
 	padding-left: 30px;

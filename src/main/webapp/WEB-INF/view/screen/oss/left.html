@@ -1,0 +1,27 @@
+<#include 'screen/oss/layout/layout.html'/>
+<#macro head>
+    <title>导航菜单</title>
+    <link type="text/css" rel="stylesheet" href="${webResourceUrl}/css/menu.css" />
+</#macro>
+<#macro content>
+    <div id="Menu">
+        <ul id="MenuUl">
+            <li class="level1">
+                <div onClick="menuClick(this);" class="level1Style"><img src="${webResourceUrl}/img/images/MenuIcon/FUNC20082.gif" class="Icon" /> 系统管理</div>
+                <ul style="display: none;" class="MenuLevel2">
+                    <li class="level2">
+                        <div class="level2Style"><img src="${webResourceUrl}/img/images/MenuIcon/menu_arrow_single.gif" /> 岗位管理</div>
+                    </li>
+                    <li class="level2">
+                        <div class="level2Style"><img src="${webResourceUrl}/img/images/MenuIcon/menu_arrow_single.gif" />部门管理</div>
+                    </li>
+                    <li class="level2">
+                        <div class="level2Style"><img src="${webResourceUrl}/img/images/MenuIcon/menu_arrow_single.gif" />用户管理</div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <#assign controller="menu" />
+</#macro>
