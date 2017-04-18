@@ -1,0 +1,48 @@
+﻿<#include '/screen/manage/layout/layout.html'/>
+<#macro head>
+        <link rel="stylesheet" type="text/css" href="css/skin_/login.css" />
+        <title>用户登录</title>
+</#macro>
+
+<#macro content>
+<div id="container">
+    <div id="bd">
+    	<div id="main">
+        	<div class="login-box">
+                <div id="logo"></div>
+                <h1></h1>
+                <div class="input username" id="username">
+                    <label for="userName">用户名</label>
+                    <span></span>
+                    <input type="text" id="userName" />
+                </div>
+                <div class="input psw" id="psw">
+                    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <span></span>
+                    <input type="password" id="password" />
+                </div>
+                <div class="input validate" id="validate">
+                    <label for="valiDate">验证码</label>
+                    <input type="text" id="valiDate" />
+                    <div class="value">X3D5</div>
+                </div>
+                <div class="styleArea">
+                    <div class="styleWrap">
+                        <select name="style">
+                            <option value="默认风格">默认风格</option>
+                            <option value="红色风格">红色风格</option>
+                            <option value="绿色风格">绿色风格</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="btn" class="loginButton">
+                    <input type="button" class="button" value="登录"  />
+                </div>
+            </div>
+        </div>
+        <div id="ft">CopyRight&nbsp;2014&nbsp;&nbsp;版权所有&nbsp;&nbsp;<a href="http://www.mycodes.net/" target="_blank">源码之家</a> &nbsp;&nbsp;</div>
+    </div>
+
+</div>
+    <#assign controller="login" />
+</#macro>

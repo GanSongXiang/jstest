@@ -15,7 +15,7 @@ A:visited {
 
 #CenterAreaBg {
 	float: left;
-	background: url(/images/login_bg.gif) repeat-x;
+	background: url(../img/images/login_bg.gif) repeat-x;
 	width: 100%; 
 	height: 569px;
 }
@@ -24,7 +24,7 @@ A:visited {
 	position: absolute; 
 	left: 200px;
 	float: left;
-	background: url(/images/login.gif) no-repeat;
+	background: url(../img/images/login.gif) no-repeat;
 	height: 569px;
 	width: 776px;
 }

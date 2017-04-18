@@ -1,0 +1,21 @@
+<#include 'screen/manage/layout/config.html'/>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Expires" content="0" />
+    <#include '/screen/manage/layout/css.html'/>
+    <#include '/screen/manage/layout/js.html'/>
+    <title>后台管理系统</title>
+    <#if head??>
+        <@head/>
+    </#if>
+</head>
+
+<body>
+<div><#if content ??> <@content/></#if></div>
+<#if foot??> <@foot/></#if>
+<#if controller ??><script type="text/javascript" src="${webResourceUrl}/js/view/${controller}.js"></script></#if>
+</body>
+</html>

@@ -11,6 +11,7 @@ $("#loginBtn").click(function () {
             login_pwd: "123456"
         },
         success: function(data) {
+            console.log(data);
             if(data.data) {
                 location.href = '/oss/index.htm'
             } else {

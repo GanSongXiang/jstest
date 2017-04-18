@@ -27,7 +27,7 @@ ul {
 	height: 64px;
 	border: 0px solid #FFFFFF;
 	margin: 0px auto;
-	background: url(/images/top_bg.gif) repeat-x;
+	background: url(../img/images/top_bg.gif) repeat-x;
 }
 
 #Logo {
@@ -128,7 +128,7 @@ ul {
 	height: 36px;
 	margin-left: auto;
 	margin: 0;
-	background: url(/images/blue/images/head2_bg.gif) repeat-x;
+	background: url(../img/images/blue/images/head2_bg.gif) repeat-x;
 	border-top: 1px solid #a0c6e1;
 	border-bottom: 1px solid #ffffff;
 }

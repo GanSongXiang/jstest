@@ -6,23 +6,3 @@
     <#assign jsVersion="1.0.5"/><#--clear cache-->
     <#assign isDebug=0/><#--1为开发测试环境，0为生产环境-->
     <#--front config end-->
-
-        <#--网站总体配置，图片一律放在app\resources\image\customize下;
-                协议相关：protocolp0.html为注册协议，protocolp1.html为按日配协议，protocolp2.html为按月配协议，均放在screen下-->
-            <#--网站标题-->
-                <#assign title="OA管理系统"/>
-                <#--网站名称-->
-                    <#assign webName="OA管理系统"/>
-                    <#--网站备案号-->
-                        <#assign webRecord="2016 浙ICP"/>
-                        <#--网站favicon-->
-                            <#--logo-->
-                                <#assign logoImg="logo.png"/>
-                                <#--公司-->
-                                    <#assign company=""/>
-                                    <#assign department=""/>
-                                    <#--网站顶部公告/通知，title指的是公告的标题，content指的是公告内容；此处请不要对title，content的文本内容加入换行符，比如回车键，否则前端会报错；如果您不需要显示公告，可以直接设置title为空即可-->
-                                        <#assign siteNotice={"title": "", "content": ""} />
-
-                                        <#--模板切换-->
-                                            <#assign tmpl="1"/><#--目前提供一套，""表示原版，"3"表示新版-->

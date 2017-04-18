@@ -2,21 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
     <meta name="renderer" content="webkit">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="Expires" content="0" />
-    <#if subMeta ??><@subMeta/></#if>
     <#include '/screen/oss/layout/css.html'/>
-    <title>${pageTitle?default(title)}</title>
+    <#include '/screen/oss/layout/js.html'/>
+    <title>后台管理系统</title>
+    <#if head??>
+        <@head/>
+    </#if>
 </head>
-<body>
-<#if head??> <@head/></#if>
-<div class="content-wrapper"><#if content ??> <@content/></#if></div>
 
+<body  class="PageBody" style="margin: 0">
+<#if content ??> <@content/></#if>
 <#if foot??> <@foot/></#if>
-<#include 'screen/oss/layout/js.html'/>
-<script data-main="${webResourceUrl}/js/app.js" src="${webResourceUrl}/js/requirejs/require.js" type="javascript"></script>
-<#if lastLoadJS ??> <@lastLoadJS/></#if>
+<#if controller ??><script type="text/javascript" src="${webResourceUrl}/js/view/${controller}.js"></script></#if>
 </body>
 </html>

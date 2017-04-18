@@ -94,6 +94,7 @@
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
             <mvc:exclude-mapping path="/oss/**"/>
+            <mvc:exclude-mapping path="/manage/**"/>
             <mvc:exclude-mapping path="/images/**"/>
             <bean class="com.itcast.oa.base.core.ContextInterceptor"></bean>
         </mvc:interceptor>
