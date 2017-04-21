@@ -181,19 +181,19 @@ ul {
 .Btn_Left {
 	height: 24px;
 	width: 4px;
-	background: url(/images/blue/images/btn_left.gif) no-repeat;
+	background: url(../img/images/blue/images/btn_left.gif) no-repeat;
 }
 
 .Btn_Right {
 	height: 24px;
 	width: 4px;
-	background: url(/images/blue/images/btn_right.gif) no-repeat;
+	background: url(../img/images/blue/images/btn_right.gif) no-repeat;
 }
 
 .Btn_Content {
 	padding-left: 5px;
 	padding-right: 5px;
-	background: url(/images/blue/images/btn_bg.gif);
+	background: url(../img/images/blue/images/btn_bg.gif);
 }
 
 .Btn_Space {

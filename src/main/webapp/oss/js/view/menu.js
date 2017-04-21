@@ -57,3 +57,9 @@ function st_onload() {
     return;
 }
 
+$(".level2Style").click(function () {
+    var r=window.parent.document.getElementById('right');
+    var jumpUrl=$(this).attr("jumpUrl");
+    r.setAttribute("src",jumpUrl);
+});
+

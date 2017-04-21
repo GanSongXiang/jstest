@@ -2,6 +2,7 @@ package com.itcast.oa.controller;
 
 import com.itcast.oa.domain.Role;
 import com.itcast.oa.service.IRoleService;
+import com.itcast.oa.service.req.F100102Req;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +21,11 @@ public class RoleController {
 
     @RequestMapping("/getAll")
     @ResponseBody
-    public List<Role> getALL(){
-        return roleService.getAll();
+    public F100102Req getALL(){
+        List<Role> roles=roleService.getAll();
+        F100102Req f=new F100102Req();
+        f.setItems(roles);
+        return f;
     }
 
     @RequestMapping("/delete")
