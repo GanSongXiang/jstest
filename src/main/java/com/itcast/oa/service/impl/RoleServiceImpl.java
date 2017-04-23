@@ -8,6 +8,7 @@ import com.itcast.oa.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,5 +28,18 @@ public class RoleServiceImpl extends BaseService<Role> implements IRoleService {
 
 	public List<Role> getAll() {
 		return roleDAO.getAll();
+	}
+
+	@Override
+	public void save(Role role) {
+		role.setCreateTime(new Date());
+		role.setUpdateTime(new Date());
+		super.save(role);
+	}
+
+	@Override
+	public void update(Role role) {
+		role.setUpdateTime(new Date());
+		super.update(role);
 	}
 }
